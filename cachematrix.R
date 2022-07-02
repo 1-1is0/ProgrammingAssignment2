@@ -32,7 +32,13 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Write a short comment describing this function
-
+## at first with a x which is the same calss as makeCacheMatrix get the invese of the matrix
+## if the invese is not NULL, return the value stored in `inv` value
+## if the inv happends to be null get the matrix stores in `x` and inverse it with solve funtion
+## at the end save it in the `x` class, so we can cache it for later useage
+## first time we won't hit the cached value but other times we get the value from cache unless 
+## we cache the value of `x` which would make the value of inv NULL, and `cacheSolve` has to 
+## caclucate and cache it again.
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
   i <- x$getinv()
